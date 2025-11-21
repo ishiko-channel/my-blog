@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Tech Blog",
+  title: "My Blog",
   description: "プログラミング学習のアウトプットブログ",
 };
 
@@ -16,11 +16,11 @@ export default function RootLayout({
     <html lang="ja">
       <body className="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
         {/* ヘッダー */}
-        <header className="bg-blue-600 text-white py-5 shadow-md">
+        <header className="bg-yellow-400 text-white py-5 shadow-md">
           <div className="max-w-4xl mx-auto px-4 flex justify-between items-center">
             {/* ロゴ（クリックするとトップに戻る） */}
             <Link href="/" className="text-2xl font-bold hover:opacity-80 transition">
-              My Tech Blog
+              My Blog
             </Link>
 
             {/* ナビゲーションメニュー */}
