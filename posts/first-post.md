@@ -1,8 +1,9 @@
 ---
 title: "記念すべき最初の投稿"
 date: "2024-11-21"
+category: "Tech"
+image: "/IMG_5689.JPG"
 ---
-
 ## はじめての記事
 
 これはMarkdownファイルから読み込まれた記事です。

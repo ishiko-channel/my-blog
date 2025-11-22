@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 記事内の画像のキャプション（注釈）のデザイン */
+.prose figcaption {
+  text-align: center;      /* 真ん中に寄せる */
+  font-size: 0.875rem;     /* 文字を少し小さく */
+  color: #888;             /* 色をグレーに */
+  margin-top: 0.5rem;      /* 画像との隙間 */
+  font-family: var(--font-zen-maru); /* 丸ゴシックを適用 */
+}
+
+/* ついでに画像自体も角丸にしておく */
+.prose img {
+  border-radius: 0.75rem;  /* 角を丸く */
+}
+
+.prose img + em {
+  display: block;          /* 改行してブロックにする */
+  font-style: normal;      /* 斜体を解除して普通の文字に */
+  font-size: 0.85rem;      /* 文字を小さく */
+  color: #888;             /* グレーにする */
+  margin-top: 0.5rem;      /* 画像との隙間を少し空ける */
+  font-family: var(--font-zen-maru); /* 丸ゴシックにする */
+}
