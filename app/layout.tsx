@@ -3,6 +3,7 @@ import "./globals.css";
 import { Zen_Maru_Gothic } from "next/font/google";
 // 作ったHeaderコンポーネントを読み込む
 import Header from "@/components/Header";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const zenMaru = Zen_Maru_Gothic({ subsets: ["latin"], weight: ["500", "700"] });
 
@@ -38,6 +39,8 @@ export default function RootLayout({
           </div>
           <p className="opacity-70">© 2025 My Daily Log.</p>
         </footer>
+
+        <GoogleAnalytics gaId="G-VBQH368MR9" />
       </body>
     </html>
   );
