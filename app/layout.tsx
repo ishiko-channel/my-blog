@@ -25,7 +25,12 @@ export default function RootLayout({
 
             {/* ナビゲーションメニュー */}
             <nav>
-              <ul className="flex space-x-6">
+              <ul className="flex space-x-6 text-sm font-medium">
+                <li>
+                  <Link href="/" className="hover:text-blue-200 transition">
+                    Home
+                  </Link>
+                </li>
                 <li>
                   <Link href="/" className="hover:text-blue-200 transition">
                     Blog
