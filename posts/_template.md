@@ -1,6 +1,6 @@
 ---
-title: "【Day 1】体重xx.xkg - 今日のタイトル"
-date: "2025-11-22"
+title: "【Day XX】体重xx.xkg - 今日のタイトル"
+date: "2025-MM-DD"
 category: "Diet"
 image: "/images/今日のハイライト画像.jpg"
 ---

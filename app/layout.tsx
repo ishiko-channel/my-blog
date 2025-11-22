@@ -8,10 +8,25 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 const zenMaru = Zen_Maru_Gothic({ subsets: ["latin"], weight: ["500", "700"] });
 
 export const metadata: Metadata = {
-  title: "Ishiko's Daily Log",
+  // 1. ここを追加！ (あなたのドメイン)
+  metadataBase: new URL('https://ishiko-daily.com'),
+
+  title: {
+    template: '%s | Ishiko\'s Daily Log', // "記事タイトル | サイト名" という形式にする設定
+    default: "Ishiko's Daily Log",         // デフォルトのタイトル
+  },
   description: "日常の記録とダイエット日記",
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍋</text></svg>',
+  },
+  // 2. ついでにSNSシェア用の設定もしておくと完璧
+  openGraph: {
+    title: "Ishiko's Daily Log",
+    description: "日常の記録とダイエット日記",
+    url: 'https://ishiko-daily.com',
+    siteName: "Ishiko's Daily Log",
+    locale: 'ja_JP',
+    type: 'website',
   },
 };
 

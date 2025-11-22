@@ -39,3 +39,19 @@ export function getAllPosts(): Post[] {
     }
   });
 }
+
+// 特定の記事1つの中身を取得する関数
+export function getPostData(slug: string) {
+    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+  
+    return {
+      slug,
+      content,
+      title: data.title,
+      date: data.date,
+      category: data.category || 'Note',
+      image: data.image || null,
+    };
+  }
