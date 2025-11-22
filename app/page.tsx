@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPosts } from '@/lib/posts';
+import ShareButtons from '@/components/ShareButtons';
 
 function getCategoryColor(category: string) {
   switch (category) {
@@ -92,6 +93,12 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+      <section className="max-w-xl mx-auto px-6 pb-20">
+        <ShareButtons 
+          title="Ishiko's Daily Log - 心と体を整える、日々の記録。"
+          url="https://ishiko-daily.com" 
+        />
       </section>
     </div>
   );

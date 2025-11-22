@@ -55,3 +55,28 @@ export function getPostData(slug: string) {
       image: data.image || null,
     };
   }
+
+  // カテゴリーごとの記事数を集計する関数
+export function getCategoryCounts(posts: Post[]) {
+    const counts: { [key: string]: number } = {};
+    posts.forEach((post) => {
+      const category = post.category || 'Other';
+      counts[category] = (counts[category] || 0) + 1;
+    });
+    // オブジェクトを配列に変換して返す
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }
+  
+  // 月ごとの記事数を集計する関数 (YYYY-MM)
+  export function getMonthlyCounts(posts: Post[]) {
+    const counts: { [key: string]: number } = {};
+    posts.forEach((post) => {
+      // 日付 "2025-11-22" から "2025-11" を取り出す
+      const month = post.date.slice(0, 7);
+      counts[month] = (counts[month] || 0) + 1;
+    });
+    // 日付の降順（新しい順）にソートして返す
+    return Object.entries(counts)
+      .map(([month, count]) => ({ month, count }))
+      .sort((a, b) => b.month.localeCompare(a.month));
+  }

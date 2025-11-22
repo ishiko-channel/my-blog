@@ -3,30 +3,32 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { Metadata } from 'next'; // 型定義を追加
-import { getPostData } from '@/lib/posts'; // さっき作った関数
+import { Metadata } from 'next'; 
+import { getPostData } from '@/lib/posts'; 
+import ShareButtons from '@/components/ShareButtons';
+import AuthorBox from '@/components/AuthorBox';
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
-// 1. ここが重要！SEO用のデータを自動生成する関数
+// SEO用のデータを自動生成する関数
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostData(slug);
 
   return {
-    title: post.title, // ブラウザのタブが「記事タイトル」になる
+    title: post.title, 
     description: `${post.date}の記録。カテゴリ: ${post.category}`,
     openGraph: {
       title: post.title,
       description: `${post.date}の記録`,
-      images: post.image ? [post.image] : [], // 記事に画像があればSNSシェア時にも表示
+      images: post.image ? [post.image] : [], 
     },
   };
 }
 
-// 記事の中身をHTMLに変換する関数（中身は以前と同じですが、getPostDataを使うように整理）
+// 記事の中身をHTMLに変換する関数
 async function getPostContent(slug: string) {
   const post = getPostData(slug);
   const processedContent = await remark()
@@ -45,7 +47,10 @@ export default async function Post({ params }: Props) {
   const post = await getPostContent(slug);
 
   return (
-    <article className="max-w-3xl mx-auto py-12 px-6">
+    // 修正1: px-6 -> px-5 md:px-8 
+    // スマホでの左右の余白を少し調整し、窮屈さをなくしました
+    <article className="max-w-3xl mx-auto py-12 px-5 md:px-8">
+      
       {/* ヘッダーエリア */}
       <div className="mb-8 text-center border-b border-yellow-100 pb-8">
         <div className="flex justify-center gap-3 mb-4 text-sm text-gray-500 font-mono">
@@ -55,7 +60,9 @@ export default async function Post({ params }: Props) {
           </span>
         </div>
         
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800 leading-tight">
+        {/* 修正2: text-3xl -> text-2xl md:text-4xl */}
+        {/* スマホでタイトルがデカすぎて改行だらけになるのを防ぎます */}
+        <h1 className="text-2xl md:text-4xl font-bold mb-6 text-gray-800 leading-tight">
           {post.title}
         </h1>
 
@@ -70,11 +77,22 @@ export default async function Post({ params }: Props) {
           </div>
         )}
       </div>
+
+      <div className="max-w-xl mx-auto">
+        <AuthorBox />
+      </div>
       
       {/* 本文エリア */}
+      {/* 修正3: prose-lg -> prose md:prose-lg */}
+      {/* スマホでは「標準サイズ」の文字にして、1行に多く文字が入るようにしました */}
       <div 
-        className="prose prose-lg prose-slate mx-auto prose-headings:font-bold prose-a:text-yellow-600 hover:prose-a:text-yellow-500 prose-img:rounded-xl"
+        className="prose prose-slate md:prose-lg mx-auto prose-headings:font-bold prose-a:text-yellow-600 hover:prose-a:text-yellow-500 prose-img:rounded-xl"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
+      />
+
+      <ShareButtons 
+        title={`${post.title} | Ishiko's Daily Log`}
+        url={`https://ishiko-daily.com/journal/${post.slug}`} 
       />
     </article>
   );
