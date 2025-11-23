@@ -55,7 +55,7 @@ export default function RootLayout({
             <a href="/journal" className="hover:text-yellow-600 transition">Journal</a>
             <a href="/profile" className="hover:text-yellow-600 transition">Profile</a>
           </div>
-          <p className="opacity-70">© 2025 My Daily Log.</p>
+          <p className="opacity-70">© 2025 いしこの日常ログ.</p>
         </footer>
 
         <GoogleAnalytics gaId="G-VBQH368MR9" />
