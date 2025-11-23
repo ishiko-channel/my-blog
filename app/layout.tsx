@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   // 2. ついでにSNSシェア用の設定もしておくと完璧
   openGraph: {
-    title: "Ishiko's Daily Log",
-    description: "日常の記録とダイエット日記",
+    title: "いしこの日常ログ (Ishiko Daily)",
+    description: "いしこの秘密基地｜日常の記録とダイエット日記",
     url: 'https://ishiko-daily.com',
     siteName: "Ishiko's Daily Log",
     locale: 'ja_JP',
