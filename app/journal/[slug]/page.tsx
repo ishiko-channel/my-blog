@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import { getPostData } from '@/lib/posts'; 
 import ShareButtons from '@/components/ShareButtons';
 import AuthorBox from '@/components/AuthorBox';
+import ArticleBody from '@/components/ArticleBody';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -85,10 +86,9 @@ export default async function Post({ params }: Props) {
       {/* 本文エリア */}
       {/* 修正3: prose-lg -> prose md:prose-lg */}
       {/* スマホでは「標準サイズ」の文字にして、1行に多く文字が入るようにしました */}
-      <div 
-        className="prose prose-slate md:prose-lg mx-auto prose-headings:font-bold prose-a:text-yellow-600 hover:prose-a:text-yellow-500 prose-img:rounded-xl"
-        dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
-      />
+      <div className="prose prose-slate md:prose-lg mx-auto prose-headings:font-bold prose-a:text-yellow-600 hover:prose-a:text-yellow-500 prose-img:rounded-xl">
+        <ArticleBody contentHtml={post.contentHtml} />
+      </div>
 
       <ShareButtons 
         title={`${post.title} | Ishiko's Daily Log`}
