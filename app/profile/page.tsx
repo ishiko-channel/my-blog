@@ -29,14 +29,14 @@ export default function Profile() {
             </div>
             
             <h1 className="text-2xl font-bold text-gray-800 mt-4">Ishiko</h1>
-            <p className="text-yellow-600 font-medium">Blogger / Learner</p>
+            <p className="text-yellow-600 font-medium">Data Analyst / Learner</p>
           </div>
 
           {/* 自己紹介文 */}
           <p className="text-gray-600 leading-relaxed text-sm mb-8 text-center">
-            心と体を整えるライフスタイルを模索中。<br />
-            日々の「美味しい」と「心地よい」を集めています。<br />
-            現在、Next.jsを使ってこのサイトを絶賛開発中！
+            JTCに勤めるしがない20代の若手データアナリスト。<br />
+            日々の想いをダイエットの記録を綴ります。<br />
+            現在、このサイトは公開しつつも絶賛開発中！
           </p>
 
           {/* --- 経歴タイムライン --- */}
@@ -120,8 +120,8 @@ export default function Profile() {
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-yellow-100 flex flex-col items-center text-center hover:shadow-md transition">
           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-xl mb-3">💻</div>
           <div className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Focus</div>
-          <div className="text-xl font-bold text-gray-800">Web Design</div>
-          <div className="text-xs text-blue-600 mt-1 font-medium">勉強中</div>
+          <div className="text-xl font-bold text-gray-800">Data Analytics</div>
+          <div className="text-xs text-blue-600 mt-1 font-medium">本職＆勉強中</div>
         </div>
       </div>
     </div>
