@@ -35,7 +35,7 @@ export default function Header() {
             <span className="text-sm transform -rotate-12">🍋</span>
           </div>
           <span className="font-semibold text-gray-800">
-            My Daily Log
+            いしこのブログ
           </span>
         </Link>
 
