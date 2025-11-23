@@ -31,10 +31,11 @@ export default function Home() {
             Diet & Life
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 leading-tight drop-shadow-sm">
-            心と体を整える、<br />日々の記録。
+            心と体を整える、<br />
+            いしこの日常ログ。
           </h1>
           <p className="text-lg text-gray-700 mb-10 leading-relaxed font-medium drop-shadow-sm">
-            食べたもの、感じたこと、<br />そして少しずつの変化を大切に。<br />無理せず、自分らしく続けていく日記です。
+            食べたもの、感じたこと、<br />そして少しずつの変化を大切に。<br />気まぐれ更新な秘密基地的ブログです。
           </p>
           <Link href="/profile" className="inline-block bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-500 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-md">
             Profileを見る

@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ishiko-daily.com'),
 
   title: {
-    template: '%s | Ishiko\'s Daily Log', // "記事タイトル | サイト名" という形式にする設定
-    default: "Ishiko's Daily Log",         // デフォルトのタイトル
+    template: '%s | いしこの日常ログ (Ishiko Daily)', 
+    default: "いしこの日常ログ | ダイエットと日々の記録ブログ",
   },
-  description: "日常の記録とダイエット日記",
+  description: "いしこ(Ishiko)の日常ブログ。ダイエット記録や、日々の生活で感じた美学を綴っています。",
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍋</text></svg>',
   },
@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     siteName: "Ishiko's Daily Log",
     locale: 'ja_JP',
     type: 'website',
+  },
+  verification: {
+    google: 'f_FsLRqXYUZgW-fSJH4Yp-iuTrRi6q01QWFSPlVGqq0',
   },
 };
 
